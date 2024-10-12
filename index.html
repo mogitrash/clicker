@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>???</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgb(186, 208, 215);
+        color: #2e2e2e;
+        font-family: "Roboto";
+      }
+      #name {
+        display: none;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .container {
+        min-width: 250px;
+        width: 20%;
+      }
+      .rotating {
+        user-select: none;
+        animation: spin 10s linear infinite;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.1s all;
+        &:active {
+          scale: 0.9;
+        }
+      }
+      #message {
+        display: none;
+        font-size: 24px;
+        margin-top: 20px;
+
+        text-decoration: none;
+        color: rgb(0, 77, 100);
+        font-size: 2em;
+      }
+
+      .counter {
+        font-size: 2em;
+        color: rgb(0, 77, 100);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required />
+
+    <div class="container">
+      <img src="img.PNG" alt="hacker" class="rotating" id="rotatingImage" />
+    </div>
+    <div class="counter"></div>
+    <a id="message" href="#">?????</a>
+    <script>
+      const rotatingImage = document.getElementById("rotatingImage");
+      const messageElement = document.getElementById("message");
+      const counterElement = document.querySelector(".counter");
+      let count = 554;
+      rotatingImage.addEventListener("click", function () {
+        count++;
+        counterElement.textContent = count;
+
+        if (count === 555) {
+          messageElement.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
