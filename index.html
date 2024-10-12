@@ -46,7 +46,6 @@
         }
       }
       #message {
-        display: none;
         font-size: 24px;
         margin-top: 20px;
 
@@ -68,10 +67,13 @@
       <img src="img.PNG" alt="hacker" class="rotating" id="rotatingImage" />
     </div>
     <div class="counter"></div>
-    <a id="message" href="t.me/bsuirhostelfivecicada">?????</a>
     <script>
+      const body = document.body;
       const rotatingImage = document.getElementById("rotatingImage");
-      const messageElement = document.getElementById("message");
+      const messageElement = document.createElement("a");
+      messageElement.setAttribute("href", "https://t.me/bsuirhostelfivecicada");
+      messageElement.textContent = "?????";
+      messageElement.id = "message";
       const counterElement = document.querySelector(".counter");
       let count = 0;
       rotatingImage.addEventListener("click", function () {
@@ -79,7 +81,7 @@
         counterElement.textContent = count;
 
         if (count === 555) {
-          messageElement.style.display = "block";
+          body.append(messageElement);
         }
       });
     </script>
